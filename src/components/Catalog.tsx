@@ -1,14 +1,17 @@
 import Link from "next/link";
 import Accordion from "./Accordion";
+import Button from "./base/Button";
+import { useTranslations } from "next-intl";
 
 type CatalogProps = {
   open: boolean;
 };
 
 const Catalog = ({ open }: CatalogProps) => {
+  const t = useTranslations();
   return (
     <div
-      className={`w-full transition border duration-300 ${!open ? "rotate-x-90 opacity-0" : "opacity-100"}   h-screen fixed top-[163px] phone:top-[70px] tablet:top-[144px] bg-white  overflow-y-auto`}
+      className={`w-full transition duration-300 ${!open ? "rotate-x-90 opacity-0" : "opacity-100"}   h-screen fixed top-[163px] phone:top-[70px] tablet:top-[144px] bg-white  overflow-y-auto`}
     >
       <div className="container pt-16 max-h-[604px]  justify-between flex-wrap overflow-y-auto  hidden tablet:flex">
         <div className="max-w-[278px] w-full flex flex-col mb-10">
@@ -179,7 +182,7 @@ const Catalog = ({ open }: CatalogProps) => {
               href={"/"}
               className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
             >
-              To‘plam
+              To'plam
             </Link>
             <Link
               href={"/"}
@@ -225,7 +228,7 @@ const Catalog = ({ open }: CatalogProps) => {
               href={"/"}
               className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
             >
-              Depilyatsiyadan keyingi oqartiruvchi krem va yog‘lar
+              Depilyatsiyadan keyingi oqartiruvchi krem va yog'lar
             </Link>
           </div>
         </div>
@@ -321,7 +324,7 @@ const Catalog = ({ open }: CatalogProps) => {
               href={"/"}
               className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
             >
-              Cho‘milish va parvarish
+              Cho'milish va parvarish
             </Link>
             <Link
               href={"/"}
@@ -333,13 +336,13 @@ const Catalog = ({ open }: CatalogProps) => {
               href={"/"}
               className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
             >
-              So‘rg‘ich va aksessuarlar
+              So'rg'ich va aksessuarlar
             </Link>
             <Link
               href={"/"}
               className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
             >
-              sumka va to‘plamlar
+              sumka va to'plamlar
             </Link>
             <Link
               href={"/"}
@@ -349,8 +352,109 @@ const Catalog = ({ open }: CatalogProps) => {
             </Link>
           </div>
         </div>
+        <div className="max-w-[278px] w-full flex flex-col mb-10">
+          <Link
+            href="/"
+            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
+          >
+            Maishiy kimyoviy moddalar va gigiyena vositalari
+          </Link>
+          <div className="flex flex-col gap-3">
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Havoni musaffolashtirgichlar va aromatizatorlar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Og'iz bo'shlig'i gigiyenasi
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Maishiy texnika uchun vositalar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Sovunlar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Qog'oz va paxta maxsulotlari
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Tozalash va yuvish vositalari
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Yuvish uchun vositalar
+            </Link>
+          </div>
+        </div>
+        <div className="max-w-[278px] w-full flex flex-col mb-10">
+          <Link
+            href="/"
+            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
+          >
+            Erkaklar bo'limi va sartaroshlar uchun vositalar
+          </Link>
+          <div className="flex flex-col gap-3">
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Britvalar, ustaralar va almashtiriladigan kassetalar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Soqol olishdan oldin va keyin surish uchun vositalar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Elektron soch va soqol oladigan vositalar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              To'plamlar
+            </Link>
+            <Link
+              href={"/"}
+              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+            >
+              Aksessuarlar
+            </Link>
+          </div>
+        </div>
       </div>
-      <Accordion />
+      <div className="container">
+        <Button
+          text={t("login")}
+          iconLeft={true}
+          icon="icon-Login text-2xl"
+          variant="primary"
+          customClass="flex tablet:hidden mt-5"
+        />
+        <Accordion />
+      </div>
     </div>
   );
 };
