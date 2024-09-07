@@ -1,0 +1,39 @@
+@import "../../../public/icomoon-fonts/icons.css";
+@import "../../../public/fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "ProximaNova", sans-serif;
+  font-weight: 400;
+}
+
+html,
+body {
+  background-color: #f7f8fa !important;
+}
+
+button {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.container {
+  @apply max-w-[1224px] mx-auto px-5;
+}
+
+.rotate-x-90 {
+  @apply transform;
+  transform: rotateX(90deg);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    @apply max-w-[1224px] mx-auto px-3;
+  }
+}
+
+img {
+  max-width: none;
+}

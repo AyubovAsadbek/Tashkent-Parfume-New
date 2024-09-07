@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "see": "ko'rish",
+    "title": "next-intl example"
+  },
+  "locale": "O'zbekcha",
+  "title": "Toshkent Parfum",
+  "location": "Toshkent sh, Oybek ko‘chasi, 28/14",
+  "catalog": "Katalog",
+  "search": "Qidirish",
+  "myOrders": "buyurtmalarim",
+  "cart": "savatcha",
+  "saved": "saqlanganlar",
+  "login": "Kirish",
+  "Beauty": "Go'zallik",
+  "Bags": "Sumkalar",
+  "Perfume": "Atirlar",
+  "HairCare": "Soch parvarishi",
+  "HouseholdChemicals": "Maishiy kimyoviy moddalar",
+  "MensSection": "Erkaklar bo'limi",
+  "DepilationAndEpilation": "Depilyatsiya va epilyatsiya",
+  "DeodorantsAndAntiperspirants": "Dezodorantlar va antiperspirantlar",
+  "see": "ko'rish"
+}

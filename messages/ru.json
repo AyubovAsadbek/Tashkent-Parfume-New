@@ -1,0 +1,20 @@
+{
+  "locale": "русский",
+  "title": "Toshkent Parfum",
+  "location": "Ташкент, ул-ца Ойбек, 28/14",
+  "catalog": "Каталог",
+  "search": "Поиск",
+  "myOrders": "мои заказы",
+  "cart": "корзина",
+  "saved": "избранные",
+  "login": "Войти",
+  "Beauty": "Красота",
+  "Bags": "Сумки",
+  "Perfume": "Парфюмерия",
+  "HairCare": "Уход за волосами",
+  "HouseholdChemicals": "Бытовая химия",
+  "MensSection": "Мужской отдел",
+  "DepilationAndEpilation": "Депиляция и эпиляция",
+  "DeodorantsAndAntiperspirants": "Дезодоранты и антиперcпиранты",
+  "see": "открыть"
+}

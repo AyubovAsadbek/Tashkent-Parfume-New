@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?hsu8kn");
+  src:
+    url("fonts/icomoon.eot?hsu8kn#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?hsu8kn") format("truetype"),
+    url("fonts/icomoon.woff?hsu8kn") format("woff"),
+    url("fonts/icomoon.svg?hsu8kn#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak-as: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Box:before {
+  content: "\e900";
+}
+.icon-Cart:before {
+  content: "\e901";
+}
+.icon-close-circle:before {
+  content: "\e902";
+}
+.icon-Facebook:before {
+  content: "\e903";
+}
+.icon-Hamburger-Menu:before {
+  content: "\e904";
+}
+.icon-Heart:before {
+  content: "\e905";
+}
+.icon-Instagram:before {
+  content: "\e906";
+}
+.icon-Login:before {
+  content: "\e907";
+}
+.icon-phone:before {
+  content: "\e908";
+}
+.icon-search:before {
+  content: "\e909";
+  color: #6f6f6f;
+}
+.icon-telegram:before {
+  content: "\e90a";
+}
