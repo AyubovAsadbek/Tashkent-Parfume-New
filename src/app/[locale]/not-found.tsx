@@ -5,11 +5,12 @@ import PageLayout from "@/components/PageLayout";
 // is necessary for this page to render.
 
 export default function NotFoundPage() {
-  const t = useTranslations("NotFoundPage");
+  const t = useTranslations();
 
   return (
     <PageLayout title={t("title")}>
-      <p className="max-w-[460px]">{t("description")}</p>
+      {/* <p className="max-w-[460px]">{t("description")}</p> */}
+      <h1>PageLayout</h1>
     </PageLayout>
   );
 }
