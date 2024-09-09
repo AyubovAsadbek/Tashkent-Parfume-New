@@ -3,9 +3,9 @@ import logo from "../../public/images/svg/logo.svg";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Button from "./base/Button";
-import FormInput from "./form/FormInput";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { Fragment } from "react";
+import FormInput from "./form/FormInput";
 
 interface MyComponentProps {
   handleCatalog: () => void;
@@ -121,7 +121,6 @@ const DesktopNav: React.FC<MyComponentProps> = ({ handleCatalog, open }) => {
               type="text"
               placeholder={t("search")}
               before="icon-search"
-              // value=""
               parentClass="h-11 border border-transparent tablet:ml-2 items-center bg-[#ECEDEF] rounded-lg w-full group-focus-within:border-black"
               inputClass="h-full w-full outline-none bg-transparent "
             />
