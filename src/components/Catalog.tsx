@@ -3,9 +3,156 @@ import Accordion from "./Accordion";
 import Button from "./base/Button";
 import { useTranslations } from "next-intl";
 
+interface LinkItem {
+  href: string;
+  label: string;
+}
+
+interface catalogs {
+  title: string;
+  titleHref: string;
+  links: LinkItem[];
+}
+
 type CatalogProps = {
   open: boolean;
 };
+
+const catalogs: catalogs[] = [
+  {
+    title: "Dezodorantlar va antiperspirantlar",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Davolovchi dezodorantlar" },
+      { href: "/", label: "Dubay dezodorantlar" },
+      { href: "/", label: "Erkaklar uchun" },
+      { href: "/", label: "Ayollar uchun" },
+    ],
+  },
+  {
+    title: "Go'zallik",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Yuz uchun" },
+      { href: "/", label: "Ko'zlar uchun" },
+      { href: "/", label: "Lablar" },
+      { href: "/", label: "Makiyaj uchun aksessuarlar" },
+      { href: "/", label: "Qoshlar" },
+      { href: "/", label: "Koreya yuz va tana parvarishi" },
+      { href: "/", label: "Yuz va tana parvarishi" },
+    ],
+  },
+  {
+    title: "Shaxsiy gigiyena va intim vositalar",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Prokladka va tamponlar" },
+      { href: "/", label: "Teri yostiqchalari" },
+      { href: "/", label: "Ayollar va erkaklar uchun shaxsiy vositalar" },
+      { href: "/", label: "Lubrikant gellar" },
+      { href: "/", label: "Intim gellar va sovunlar" },
+    ],
+  },
+  {
+    title: "Atirlar",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Tana uchun spreylar" },
+      { href: "/", label: "Uniseks" },
+      { href: "/", label: "Tana uchun kremlar va losyonlar" },
+      { href: "/", label: "Ayollar uchun" },
+      { href: "/", label: "Erkaklar uchun" },
+      { href: "/", label: "To'plam" },
+      { href: "/", label: "Raspiv atirlar" },
+    ],
+  },
+  {
+    title: "Depilyatsiya va epilyatsiya",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Depilyatsiya uchun vosklar" },
+      { href: "/", label: "Shugaring" },
+      { href: "/", label: "Depilyatsiya uchun kremlar" },
+      { href: "/", label: "Depilyatsiya uchun qozoncha va vositalar" },
+      {
+        href: "/",
+        label: "Depilyatsiyadan keyingi oqartiruvchi krem va yog'la",
+      },
+    ],
+  },
+  {
+    title: "Soch parvarishi va bo'yoqlar",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Shampun va quruq shampunlar" },
+      { href: "/", label: "Soch uchun lak va muslar" },
+      { href: "/", label: "balzam, konditsionerlar va maskalar" },
+      { href: "/", label: "soch uchun sprey va kremlar" },
+      {
+        href: "/",
+        label: "yog'lar va svritkalar",
+      },
+      {
+        href: "/",
+        label: "Gel va vosklar",
+      },
+      {
+        href: "/",
+        label: "Bo'yash va kimyoviy vositalar",
+      },
+    ],
+  },
+  {
+    title: "Dush uchun gel va aksessuarlar",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Dush va vanna uchun vositalar" },
+      { href: "/", label: "Aksessuarlar" },
+    ],
+  },
+  {
+    title: "Bolalar bo'limi",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Tagliklar va salfetkalar" },
+      { href: "/", label: "Cho'milish va parvarish" },
+      { href: "/", label: "Bolalar kosmetikasi va atirlar" },
+      { href: "/", label: "So'rg'ich va aksessuarlar" },
+      { href: "/", label: "sumka va to'plamlar" },
+      { href: "/", label: "Tozalovchi vositalar" },
+    ],
+  },
+  {
+    title: "Maishiy kimyoviy moddalar va gigiyena vositalari",
+    titleHref: "/",
+    links: [
+      { href: "/", label: "Havoni musaffolashtirgichlar va aromatizatorlar" },
+      { href: "/", label: "Og'iz bo'shlig'i gigiyenasi" },
+      { href: "/", label: "Maishiy texnika uchun vositalar" },
+      { href: "/", label: "Sovunlar" },
+      { href: "/", label: "Qog'oz va paxta maxsulotlari" },
+      { href: "/", label: "Tozalash va yuvish vositalari" },
+      { href: "/", label: "Yuvish uchun vositalar" },
+    ],
+  },
+  {
+    title: "Erkaklar bo'limi va sartaroshlar uchun vositalar",
+    titleHref: "/",
+    links: [
+      {
+        href: "/",
+        label: "Britvalar, ustaralar va almashtiriladigan kassetalar",
+      },
+      {
+        href: "/",
+        label: "Soqol olishdan oldin va keyin surish uchun vositalar",
+      },
+      { href: "/", label: "Elektron soch va soqol oladigan vositalar" },
+      { href: "/", label: "To'plamlar" },
+      { href: "/", label: "Aksessuarlar" },
+    ],
+  },
+];
 
 const Catalog = ({ open }: CatalogProps) => {
   const t = useTranslations();
@@ -14,436 +161,27 @@ const Catalog = ({ open }: CatalogProps) => {
       className={`w-full transition duration-300 ${!open ? "rotate-x-90 opacity-0" : "opacity-100"}   h-screen fixed top-[163px] phone:top-[70px] tablet:top-[144px] bg-white  overflow-y-auto`}
     >
       <div className="container pt-16 max-h-[604px]  justify-between flex-wrap overflow-y-auto  hidden tablet:flex">
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Dezodorantlar va antiperspirantlar
-          </Link>
-          <div className="flex flex-col gap-3">
+        {catalogs.map((item, index) => (
+          <div key={index} className="max-w-[278px] w-full flex flex-col mb-10">
             <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+              href={item.titleHref}
+              className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
             >
-              Davolovchi dezodorantlar
+              {item.title}
             </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Dubay dezodorantlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Erkaklar uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Ayollar uchun
-            </Link>
+            <div className="flex flex-col gap-3">
+              {item.links.map((link, linkIndex) => (
+                <Link
+                  key={linkIndex}
+                  href={link.href}
+                  className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Go'zallik
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Yuz uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Ko'zlar uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Lablar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Makiyaj uchun aksessuarlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Qoshlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Koreya yuz va tana parvarishi
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Yuz va tana parvarishi
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Shaxsiy gigiyena va intim vositalar
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Prokladka va tamponlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Teri yostiqchalari
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Ayollar va erkaklar uchun shaxsiy vositalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Lubrikant gellar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Intim gellar va sovunlar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Atirlar
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Tana uchun spreylar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Uniseks
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Tana uchun kremlar va losyonlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Ayollar uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Erkaklar uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              To'plam
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Raspiv atirlar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Depilyatsiya va epilyatsiya
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Depilyatsiya uchun vosklar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Shugaring
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Depilyatsiya uchun kremlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Depilyatsiya uchun qozoncha va vositalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Depilyatsiyadan keyingi oqartiruvchi krem va yog'lar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Soch parvarishi va bo'yoqlar
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Shampun va quruq shampunlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Soch uchun lak va muslar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              balzam, konditsionerlar va maskalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              soch uchun sprey va kremlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              yog'lar va svritkalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Gel va vosklar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Bo'yash va kimyoviy vositalar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Dush uchun gel va aksessuarlar
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Dush va vanna uchun vositalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Aksessuarlar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Bolalar bo'limi
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Tagliklar va salfetkalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Cho'milish va parvarish
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Bolalar kosmetikasi va atirlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              So'rg'ich va aksessuarlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              sumka va to'plamlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Tozalovchi vositalar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Maishiy kimyoviy moddalar va gigiyena vositalari
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Havoni musaffolashtirgichlar va aromatizatorlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Og'iz bo'shlig'i gigiyenasi
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Maishiy texnika uchun vositalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Sovunlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Qog'oz va paxta maxsulotlari
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Tozalash va yuvish vositalari
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Yuvish uchun vositalar
-            </Link>
-          </div>
-        </div>
-        <div className="max-w-[278px] w-full flex flex-col mb-10">
-          <Link
-            href="/"
-            className="text-xl leading-6 hover:text-redPrimary transition duration-300 text-mainDark font-bold mb-6"
-          >
-            Erkaklar bo'limi va sartaroshlar uchun vositalar
-          </Link>
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Britvalar, ustaralar va almashtiriladigan kassetalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Soqol olishdan oldin va keyin surish uchun vositalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Elektron soch va soqol oladigan vositalar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              To'plamlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[16px] leading-5 text-mainDark font-semibold transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Aksessuarlar
-            </Link>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="container">
         <Button

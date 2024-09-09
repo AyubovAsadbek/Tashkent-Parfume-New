@@ -37,66 +37,6 @@ const Accordion = () => {
         </div>
         <div className="collapse collapse-arrow join-item border-b rounded-none">
           <input
-            type="checkbox text-center items-center"
-            checked={openIndex === 1}
-            onChange={() => toggleAccordion(1)}
-            className="hidden"
-          />
-          <div
-            className="collapse-title cursor-pointer"
-            onClick={() => toggleAccordion(1)}
-          >
-            <CategoryTitle text="Go'zallik" />
-          </div>
-          <div
-            className={`collapse-content ${openIndex === 1 ? "block" : "hidden"} flex flex-col gap-3`}
-          >
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Yuz uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Ko'zlar uchun
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Lablar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Makiyaj uchun aksessuarlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Qoshlar
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Koreya yuz va tana parvarishi
-            </Link>
-            <Link
-              href={"/"}
-              className="text-[14px] leading-5 text-mainDark transition duration-200 hover:text-redPrimary hover:translate-x-1"
-            >
-              Yuz va tana parvarishi
-            </Link>
-          </div>
-        </div>
-        <div className="collapse collapse-arrow join-item border-b rounded-none">
-          <input
             type="checkbox"
             checked={openIndex === 2}
             onChange={() => toggleAccordion(2)}

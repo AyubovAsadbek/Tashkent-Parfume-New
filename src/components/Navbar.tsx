@@ -7,7 +7,7 @@ import logo from "../../public/images/svg/logo.svg";
 import appIcon from "../../public/images/svg/app-icon.svg";
 import Image from "next/image";
 import Button from "./base/Button";
-import FormInput from "./Form/FormInput";
+import FormInput from "./form/FormInput";
 import LocaleSwitcher from "./LocaleSwitcher";
 import Catalog from "./Catalog";
 import { useState } from "react";
