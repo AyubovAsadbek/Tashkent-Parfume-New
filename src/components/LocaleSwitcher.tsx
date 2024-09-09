@@ -19,7 +19,7 @@ export default function LocaleSwitcher() {
 
   function handleLocaleChange(nextLocale: Locale) {
     startTransition(() => {
-      router.replace({ pathname, params }, { locale: nextLocale });
+      router.replace({ pathname }, { locale: nextLocale });
     });
     setIsOpen(false);
   }
