@@ -10,7 +10,9 @@ export default function LocaleSwitcher() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
-  const params = useParams();
+  // const params = useParams();
+  const params = useParams() as { [key: string]: string };
+
   const locale = useLocale();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +42,7 @@ export default function LocaleSwitcher() {
       </button>
 
       <div
-        className={`absolute z-10 transition duration-300 translate-y-4  mt-2 w-full opacity-0 ${isOpen ? "opacity-100 translate-y-0" : ""}`}
+        className={`absolute z-10 transition duration-300 translate-y-4  mt-2 w-full opacity-0 ${isOpen ? "opacity-100 translate-y-1" : ""}`}
       >
         <button
           className={`font-semibold capitalize border-[#F2F3F5] border-t border-l border-r w-full flex items-center text-xs rounded-t-lg  h-9 justify-start pl-3 bg-white hover:bg-[#f8edf1] ${locale === "uz" ? "text-redPrimary" : ""}`}
