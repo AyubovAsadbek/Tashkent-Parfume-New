@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`group cursor-pointer capitalize rounded-lg transition text-white duration-200 h-11 px-3 flex items-center justify-center gap-1 text-[15px] leading-6  ${variants[variant]} ${customClass}`}
+      className={`group cursor-pointer capitalize rounded-lg transition text-white duration-200 h-11 px-4 flex items-center justify-center gap-1 text-[15px] leading-6  ${variants[variant]} ${customClass}`}
       type={type}
       disabled={disabled}
     >

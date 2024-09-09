@@ -158,7 +158,7 @@ const Catalog = ({ open }: CatalogProps) => {
   const t = useTranslations();
   return (
     <div
-      className={`w-full transition duration-300 ${!open ? "rotate-x-90 opacity-0" : "opacity-100"}   h-screen fixed top-[163px] phone:top-[70px] tablet:top-[144px] bg-white  overflow-y-auto`}
+      className={`w-full transition h-screen duration-300 ${!open ? "rotate-x-90 opacity-0" : "opacity-100"} fixed top-[163px] phone:top-[70px] tablet:top-[144px] bg-white  overflow-y-auto`}
     >
       <div className="container pt-16 max-h-[604px]  justify-between flex-wrap overflow-y-auto  hidden tablet:flex">
         {catalogs.map((item, index) => (
