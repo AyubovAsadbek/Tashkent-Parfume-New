@@ -1,15 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 
 import Catalog from "./Catalog";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
 const Navbar = () => {
-  // Language Switcher
-  const t = useTranslations();
   const [open, setOpen] = useState(false);
 
   // Catalog Handler
