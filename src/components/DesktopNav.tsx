@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import Button from "./base/Button";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { Fragment } from "react";
-import FormInput from "./base/FormInput";
+import FormInput from "./form/FormInput";
 
 interface MyComponentProps {
   handleCatalog: () => void;
