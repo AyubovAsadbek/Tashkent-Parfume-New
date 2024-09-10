@@ -45,9 +45,11 @@ export default async function LocaleLayout({
 
   return (
     <html className="h-full" lang={locale}>
+      <head>
+        <link rel="icon" href="./images/favicon.svg" />
+      </head>
       <body className={clsx(inter.className, "flex h-full flex-col")}>
         <NextIntlClientProvider messages={messages}>
-          {/* <Navigation /> */}
           <Navbar />
           {children}
         </NextIntlClientProvider>
