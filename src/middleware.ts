@@ -8,7 +8,7 @@ export const config = {
     // Enable a redirect to a matching locale at the root
     "/",
 
-    // Handle locale-prefixed routes (e.g., /uz, /ru, /la)
+    // Hanxdle locale-prefixed routes (e.g., /uz, /ru, /la)
     "/(uz|ru|la)/:path*",
 
     // Handle all other routes, excluding Next.js specific files and assets
