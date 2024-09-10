@@ -8,7 +8,6 @@ export default function NavigationLink<Pathname extends Pathnames>({
   href,
   ...rest
 }: ComponentProps<typeof Link<Pathname>>) {
-  
   const selectedLayoutSegment = useSelectedLayoutSegment();
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
   const isActive = pathname === href;

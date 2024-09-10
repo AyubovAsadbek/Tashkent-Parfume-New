@@ -13,7 +13,7 @@ function getEntry(href: Href) {
     url: getUrl(href, routing.defaultLocale),
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((locale) => [locale, getUrl(href, locale)])
+        routing.locales.map((locale) => [locale, getUrl(href, locale)]),
       ),
     },
   };

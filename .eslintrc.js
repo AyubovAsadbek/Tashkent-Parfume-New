@@ -1,20 +1,18 @@
 module.exports = {
   env: {
-    node: true,
+    browser: true,
+    es2021: true,
+    node: true, // Add this line
   },
   extends: [
-    ["plugin:prettier/recommended"],
-    "molindo/typescript",
-    "molindo/react",
-    "molindo/tailwind",
-    "plugin:@next/next/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
   ],
-  overrides: [
-    {
-      files: ["*.spec.tsx"],
-      rules: {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-  ],
+  plugins: ["prettier"],
+  rules: {
+    "prettier/prettier": "error",
+  },
+  // other configurations...
 };

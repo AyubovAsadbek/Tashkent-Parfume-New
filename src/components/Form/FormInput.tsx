@@ -5,9 +5,7 @@ interface FormInputProps {
   parentClass?: string;
   inputClass?: string;
   error?: boolean;
-  //   value: string;
   before: string;
-  //   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -17,9 +15,7 @@ const FormInput: React.FC<FormInputProps> = ({
   parentClass = "",
   inputClass = "",
   error,
-  //   value,
   before,
-  //   onChange,
 }) => {
   return (
     <div
