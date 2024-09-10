@@ -42,7 +42,7 @@ export default function LocaleSwitcher() {
       </button>
 
       <div
-        className={`absolute z-10 transition duration-300 top-5  mt-2 w-full opacity-0 ${isOpen ? "opacity-100 translate-y-2" : ""}`}
+        className={`absolute z-10 transition duration-300 top-5  mt-2 w-full opacity-0 ${isOpen ? "opacity-100 translate-y-2" : ""} shadow-[0px_4px_36px_0px_#38383829] rounded-lg`}
       >
         <button
           className={`font-semibold capitalize border-[#F2F3F5] border-t border-l border-r w-full flex items-center text-xs rounded-t-lg  h-9 justify-start pl-3 bg-white hover:bg-[#f8edf1] ${locale === "uz" ? "text-redPrimary" : ""}`}
