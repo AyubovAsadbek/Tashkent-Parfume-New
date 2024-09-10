@@ -8,12 +8,10 @@ export const config = {
     // Enable a redirect to a matching locale at the root
     "/",
 
-    // Set a cookie to remember the previous locale for
-    // all requests that have a locale prefix
+    // Handle locale-prefixed routes (e.g., /uz, /ru, /la)
     "/(uz|ru|la)/:path*",
 
-    // Enable redirects that add missing locales
-    // (e.g. `/pathnames` -> `/en/pathnames`)
+    // Handle all other routes, excluding Next.js specific files and assets
     "/((?!_next|_vercel|.*\\..*).*)",
   ],
 };
