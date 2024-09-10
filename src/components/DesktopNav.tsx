@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import Button from "./base/Button";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { Fragment } from "react";
-import FormInput from "@/components/form/FormInput";
+// import FormInput from "./form/FormInput.tsx";
 
 interface MyComponentProps {
   handleCatalog: () => void;
@@ -115,7 +115,7 @@ const DesktopNav: React.FC<MyComponentProps> = ({ handleCatalog, open }) => {
             customClass="hidden tablet:flex"
             onClick={handleCatalog}
           />
-          <form className="tablet:max-w-[530px] w-full group tablet:mr-2">
+          {/* <form className="tablet:max-w-[530px] w-full group tablet:mr-2">
             <FormInput
               id="search"
               type="text"
@@ -124,7 +124,7 @@ const DesktopNav: React.FC<MyComponentProps> = ({ handleCatalog, open }) => {
               parentClass="h-11 border border-transparent tablet:ml-2 items-center bg-[#ECEDEF] rounded-lg w-full group-focus-within:border-black"
               inputClass="h-full w-full outline-none bg-transparent "
             />
-          </form>
+          </form> */}
           <div className="ml-3 hidden gap-5 tablet:flex">
             <Link
               href="/my-orders"
