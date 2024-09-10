@@ -14,5 +14,11 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  }
+
   // other configurations...
 };
